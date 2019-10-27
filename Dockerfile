@@ -4,7 +4,7 @@ MAINTAINER Brian Lycett <brian@wheelybird.com>
 
 RUN yum -y install epel-release iptables bash nss-pam-ldapd ca-certificates net-tools wget openssl
 RUN wget http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el7/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm && yum -y install rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
-RUN yum -y install openvpn whatmask fail2ban google-authenticator ipcalc
+RUN yum -y install openvpn whatmask fail2ban google-authenticator ipcalc ntp ntpdate
 RUN yum -y upgrade
 
 EXPOSE 1194/udp
