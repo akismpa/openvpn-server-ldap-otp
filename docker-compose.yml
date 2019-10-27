@@ -18,7 +18,7 @@ services:
       - OVPN_DNS_SERVERS=youraddns1,youraddns2
       - OVPN_DNS_SEARCH_DOMAIN=yourad.domain.com
       - OVPN_REGISTER_DNS=true
-      - ENABLE_OTP=true
+#      - ENABLE_OTP=true
       - FAIL2BAN_ENABLED=true
       - FAIL2BAN_MAXRETRIES=5
     cap_add:
