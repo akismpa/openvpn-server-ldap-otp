@@ -1,6 +1,6 @@
 ## OpenVPN container
 
-This will create an OpenVPN server. You can either use LDAP for authentication (with optional 2FA provided by Google Auth) or create a client certificate.   
+This will create an OpenVPN server. You can either use Active Directory for authentication (with optional 2FA provided by Google Auth) or create a client certificate.   
 The container will automatically generate the certificates on the first run (using a 2048 bit key) which means that *the initial run could take several minutes* whilst keys are generated.  The client configuration will be output in the logs.
 A volume is created for data persistence.
 
