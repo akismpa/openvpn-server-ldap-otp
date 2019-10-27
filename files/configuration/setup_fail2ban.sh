@@ -38,5 +38,10 @@ cat <<EOF >> /etc/fail2ban/fail2ban.local
 logtarget = /proc/1/fd/1
 EOF
 
+cat <<EOF >> /etc/fail2ban/jail.d/00-firewalld.conf
+[DEFAULT]
+banaction = iptables-allports
+EOF
 
-service fail2ban start
+
+fail2ban-client start
