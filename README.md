@@ -60,16 +60,7 @@ Configuration is via environmental variables.  Here's a list, along with the def
 
 #### Launching the OpenVPN daemon container:  
 ```
-docker run \
-           --name openvpn \
-           --volume /path/on/host:/etc/openvpn \
-           --detach=true \
-           -p 1194:1194/udp \
-           -e "OVPN_SERVER_CN=myserver.mycompany.com" \
-           -e "LDAP_URI=ldap://ldap.mycompany.com" \
-           -e "LDAP_BASE_DN=dc=mycompany,dc=com" \
-           --cap-add=NET_ADMIN \
-           akismpa/ovpn
+docker-compose up -d 
 ```
 
 * `--cap-add=NET_ADMIN` is necessary; the container needs to create the tunnel device and create iptable rules.
