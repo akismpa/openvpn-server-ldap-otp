@@ -1,10 +1,11 @@
-FROM centos:7
+FROM centos:7.6.1810
 
-MAINTAINER Brian Lycett <brian@wheelybird.com>
+MAINTAINER Panagiotis Bariamis <p.bariamis@outlook.com
 
-RUN yum -y install epel-release iptables bash nss-pam-ldapd ca-certificates net-tools wget openssl
+RUN yum -y install iptables bash nss-pam-ldapd ca-certificates net-tools wget openssl
+RUN yum install epel-release -y
 RUN wget http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el7/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm && yum -y install rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
-RUN yum -y install openvpn whatmask fail2ban google-authenticator ipcalc 
+RUN yum -y install openvpn whatmask fail2ban google-authenticator ipcalc
 RUN yum -y upgrade
 
 EXPOSE 1194/udp
@@ -23,4 +24,3 @@ ADD ./files/easyrsa /opt/easyrsa
 VOLUME /etc/openvpn
 
 CMD ["/usr/local/bin/entrypoint"]
-
