@@ -43,5 +43,6 @@ cat <<EOF >> /etc/fail2ban/jail.d/00-firewalld.conf
 banaction = iptables-allports
 EOF
 
+touch /etc/openvpn/logs/openvpn.log
 
 fail2ban-client start
