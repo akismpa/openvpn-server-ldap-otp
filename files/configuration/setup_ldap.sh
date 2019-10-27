@@ -8,7 +8,7 @@ uid nslcd
 gid ldap
 
 uri $LDAP_URI
-
+filter passwd (&(objectClass=user)(objectClass=person)(!(objectClass=computer)))
 base $LDAP_BASE_DN
 scope sub
 
