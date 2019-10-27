@@ -69,7 +69,7 @@ docker run \
            -e "LDAP_URI=ldap://ldap.mycompany.com" \
            -e "LDAP_BASE_DN=dc=mycompany,dc=com" \
            --cap-add=NET_ADMIN \
-           wheelybird/openvpn-ldap-otp
+           akismpa/ovpn
 ```
 
 * `--cap-add=NET_ADMIN` is necessary; the container needs to create the tunnel device and create iptable rules.
@@ -77,7 +77,7 @@ docker run \
 * Extract the client configuration (along with embedded certificates) from the running container:
 `docker exec -ti openvpn show-client-config`
 
-* An image based on Centos 7 is available via `wheelybird/openvpn-ldap-otp:centos7` thanks to GitHub user *benohara*.
+* An image based on Centos 7 is available via `akismpa/ovpn`. 
 
 
 #### Using OTP
@@ -97,7 +97,7 @@ This is useful for testing out your VPN server and isn't intended as an especial
 
 #### Git repository
 
-The Dockerfile and associated assets are available at https://github.com/wheelybird/openvpn-server-ldap-otp
+The Dockerfile and associated assets are available at https://github.com/akismpa/openvpn-server-ldap-otp
 
 #### Fail2ban Administration
 
